@@ -1,6 +1,6 @@
 # AI 图文生成网站（API 版）
 
-一个基于 **Vue3 + FastAPI + Redis + Celery + WebSocket** 的 AI 图文生成系统，对接**火山方舟 Seedream** 文生图 / 图生图接口，**无需本地 GPU**。适合大四实训与简历项目。
+一个基于 **Vue3 + FastAPI + Redis + Celery + WebSocket** 的 AI 图文生成系统，对接**火山方舟 Seedream** 文生图 / 图生图接口，**无需本地 GPU**。
 
 ## 功能特性
 
