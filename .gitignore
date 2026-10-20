@@ -1,0 +1,23 @@
+# ===== 环境变量（含 API 密钥，绝不能提交）=====
+.env
+
+# ===== Python =====
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# ===== Node =====
+node_modules/
+dist/
+
+# ===== Redis 便携版（第三方二进制，不入库，按 README 自行下载）=====
+redis/
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
