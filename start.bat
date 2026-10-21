@@ -1,29 +1,32 @@
 @echo off
-chcp 65001 >nul
+chcp 936 >nul
 cd /d %~dp0
 
 echo ============================================
-echo   AI å›¾æ–‡ç”Ÿæˆé¡¹ç›® ä¸€é”®å¯åŠ¨
+echo   AI Í¼ÎÄÉú³ÉÏîÄ¿ Ò»¼üÆô¶¯£¨Windows£©
 echo ============================================
 echo.
+echo Ê×´ÎÊ¹ÓÃ£ºä¯ÀÀÆ÷´ò¿ª http://localhost:5173 ºóÏÈ×¢²áÕËºÅÔÙµÇÂ¼¡£
+echo ÌáÊ¾£ºÇëÈ·ÈÏ backend\.env ÖĞÒÑÅäÖÃ ARK_API_KEY Óë JWT_SECRET¡£
+echo.
 
-echo [1/4] å¯åŠ¨ Redis ...
+echo [1/4] Æô¶¯ Redis ...
 start "Redis" cmd /k "cd /d %~dp0redis && redis-server.exe"
 
-echo [2/4] å¯åŠ¨ Celery worker ...
+echo [2/4] Æô¶¯ Celery worker ...
 start "Celery" cmd /k "cd /d %~dp0backend && venv\Scripts\python.exe -m celery -A celery_app worker --loglevel=info --pool=solo"
 
-echo [3/4] å¯åŠ¨ FastAPI ...
+echo [3/4] Æô¶¯ FastAPI ...
 start "FastAPI" cmd /k "cd /d %~dp0backend && venv\Scripts\python.exe -m uvicorn main:app --host 127.0.0.1 --port 8000"
 
-echo [4/4] å¯åŠ¨å‰ç«¯ ...
+echo [4/4] Æô¶¯Ç°¶Ë ...
 start "Frontend" cmd /k "cd /d %~dp0frontend && npm run dev"
 
 echo.
 echo ============================================
-echo   å…¨éƒ¨å¯åŠ¨å®Œæˆï¼
-echo   æµè§ˆå™¨æ‰“å¼€ http://localhost:5173
-echo   å…³é—­é¡¹ç›®ï¼šç›´æ¥å…³æ‰è¿™ 4 ä¸ªçª—å£å³å¯
+echo   È«²¿Æô¶¯Íê³É£¡
+echo   ä¯ÀÀÆ÷´ò¿ª http://localhost:5173
+echo   ¹Ø±ÕÏîÄ¿£ºÖ±½Ó¹ØµôÕâ 4 ¸ö´°¿Ú¼´¿É
 echo ============================================
 echo.
 pause

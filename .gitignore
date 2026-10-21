@@ -9,6 +9,13 @@ __pycache__/
 *.db
 *.sqlite3
 
+# ===== 本地数据与日志（运行时生成，不入库）=====
+backend/data/
+backend/logs/
+
+# ===== 压测原始产物（可重新生成，不入库）=====
+tests/load_report*
+
 # ===== Node =====
 node_modules/
 dist/

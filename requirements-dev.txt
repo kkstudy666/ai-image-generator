@@ -1,0 +1,2 @@
+# 开发 / 压测依赖（与生产 requirements.txt 分离）
+locust==2.32.6
